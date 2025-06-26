@@ -1,75 +1,69 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Segurança Digital: Senhas Seguras</title>
-    <link rel="stylesheet" href="style.css"> <!-- Link para o arquivo CSS -->
+    <title>Gerador de senha</title>
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-
-<header>
-    <h1>Segurança Digital: Como Criar Senhas Seguras com Matemática</h1>
-</header>
-
-<div class="container">
-    <div class="content">
-        <section>
-            <h2>Por que usar matemática nas senhas?</h2>
-            <p>
-                A matemática pode ser uma poderosa ferramenta para aumentar a segurança das suas senhas. Ao criar senhas aleatórias
-                e complexas, podemos dificultar ataques de força bruta e melhorar a proteção dos dados pessoais. 
-                Senhas seguras envolvem a combinação de números, letras (maiúsculas e minúsculas), e caracteres especiais.
-            </p>
-        </section>
-
-        <section>
-            <h2>Como a matemática ajuda a gerar senhas seguras</h2>
-            <p>
-                Quando falamos de senhas, a matemática entra na análise da complexidade e da força de uma senha.
-                A quantidade de combinações possíveis de caracteres em uma senha é dada por:
-            </p>
-            <div class="example">
-                <h3>Exemplo de Cálculo</h3>
-                <p>
-                    Se tivermos uma senha com 8 caracteres, composta por letras maiúsculas (26 letras), minúsculas (26 letras), 
-                    números (10 dígitos) e caracteres especiais (por exemplo, 32 caracteres possíveis), o número de combinações 
-                    possíveis seria:
-                </p>
-                <div class="math-content">
-                    94 ^ 8 = <span id="combinations"></span>
+    <section class="conteudo">
+        <div class="conteudo-titulo">
+            <img src="unlock.svg" alt="cadeado fechado">
+            <h2 class="titulo-principal">Gerador de senhas</h2>
+            <h3 class="titulo-secundario">Gere instantaneamente uma senha aleatória e segura</h3>
+        </div>
+        <div class="conteudo-senha">
+            <label for="senha">Senha</label>
+            <input name="senha" type="text" id="campo-senha" readonly>
+        </div>
+        <div class="parametro">
+            <h3 class="parametro-titulo">Personalize sua senha</h3>
+            <div class="parametro-coluna__senha">
+                <div class="parametro-senha">
+                    <h4 class="parametro-senha__titulo">Número de caracteres</h4>
+                    <div class="parametro-senha-botoes">
+                        <button class="parametro-senha__botao">-</button>
+                        <p class="parametro-senha__texto">12</p>
+                        <button class="parametro-senha__botao">+</button>
+                    </div>
                 </div>
-                <p>(Onde 94 é a quantidade total de caracteres possíveis: 26 + 26 + 10 + 32)</p>
+                <div class="parametro-senha">
+                    <h4 class="parametro-senha__titulo">Características da senha</h4>
+                    <div class="parametro-senha-checkbox">
+                        <input name="maiusculo" type="checkbox" class="checkbox" checked>
+                        <label for="maiusculo">Letras maiúsculas</label>
+                    </div>
+                    <div class="parametro-senha-checkbox">
+                        <input name="minusculo" type="checkbox" class="checkbox">
+                        <label for="minusculo">Letras minúsculas</label>
+                    </div>
+                    <div class="parametro-senha-checkbox">
+                        <input name="numero" type="checkbox" class="checkbox">
+                        <label for="numero">Números</label>
+                    </div>
+                    <div class="parametro-senha-checkbox">
+                        <input name="simbolo" type="checkbox" class="checkbox">
+                        <label for="simbolo">Símbolos</label>
+                    </div>
+                </div>
+                <div class="parametro-senha">
+                    <h4 class="parametro-senha__titulo">Força da senha</h4>
+                    <div class="barra"></div>
+                    <div class="forca fraca"></div>
+                    <div class="parametro-senha-textos">
+                        <p>Fraca</p>
+                        <p>Média</p>
+                        <p>Forte</p>
+                    </div>
+                    <p class="entropia"></p>
+                </div>
             </div>
-
-            <p>
-                Com este cálculo, podemos ver que o número de combinações possíveis para uma senha de 8 caracteres é
-                extremamente grande, o que torna mais difícil para hackers quebrarem a senha por força bruta.
-            </p>
-        </section>
-
-        <section>
-            <h2>Exemplo prático: Gerador de Senhas</h2>
-            <p>
-                Para melhorar ainda mais sua segurança, recomendamos o uso de um gerador de senhas aleatórias.
-                <br>
-                <a href="https://www.random.org/passwords/" target="_blank" class="button">Gerar Senha Segura</a>
-            </p>
-        </section>
-    </div>
-</div>
-
-<div class="footer">
-    <p>&copy; 2025 Segurança Digital | Todos os direitos reservados</p>
-</div>
-
-<script>
-    // Calculando o número de combinações possíveis para uma senha de 8 caracteres
-    const totalChars = 94; // 26 + 26 + 10 + 32
-    const passwordLength = 8;
-    const totalCombinations = Math.pow(totalChars, passwordLength);
-    document.getElementById('combinations').textContent = totalCombinations.toLocaleString();
-</script>
-
+        </div>
+    </section>
+    <script src="main.js"></script>
 </body>
+
 </html>
